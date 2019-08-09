@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <svgs />
+    
+    <kaikeba />
+
+    <Input v-model="value" placeholder="请输入您的手机号码" type="text" />
+    <!-- 相当于 -->
+    <!-- <Input :val="value" @input="value = $event" placeholder="请输入您的手机号码" type="text" /> -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import kaikeba from '@/components/kaikeba'
+import svgs from '@/components/svg'
+import Input from '@/components/Input'
 export default {
   name: 'app',
+  data () {
+    return {
+      value: '你好'
+    }
+  },
+  methods: {
+  },
   components: {
-    HelloWorld
+    kaikeba,
+    svgs,
+    Input
   }
 }
 </script>
