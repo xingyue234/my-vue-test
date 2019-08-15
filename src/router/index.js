@@ -1,7 +1,8 @@
 import Router from 'vue-router'
 import Vue from 'vue'
-
+import Home from '@/pages/home'
 Vue.use(Router)
+console.log(Home, 'home')
 
 export const constRoutes =  [
   {
@@ -40,8 +41,10 @@ export const constRoutes =  [
 const router = new Router({
   mode: 'hash',
   base: process.env.BASE_URL,
-  routes: constRoutes
+  // routes: constRoutes
 })
+
+console.log(router, 'router')
 
 router.beforeEach((to, from, next) => {
   if (to.meta.auth && !window.isLogin) {

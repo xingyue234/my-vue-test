@@ -11,7 +11,16 @@ module.exports = {
   publicPath: '/best-vue',
   outputDir: '/best-vue/',
   devServer: {
-    port
+    port,
+    proxy: {
+      [process.env.VUE_APP_BASE_API]: {
+        target: 'https://www.easy-mock.com/mock/5d391aa5ef0cd27fc034db6d/example_copy',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
+      }
+    }
   },
   configureWebpack: {
     name: title

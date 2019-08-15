@@ -5,6 +5,10 @@ import './icons'
 import create from '@/utils/create'
 import router from '@/router'
 
+import '@/router/permisson'
+
+import '@/plugins/element'
+
 Vue.config.productionTip = false
 
 Vue.prototype.$create = create

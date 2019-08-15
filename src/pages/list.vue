@@ -9,6 +9,9 @@ export default {
     return {
       num: 10
     }
+  },
+  created () {
+    console.log(this.$route.matched)
   }
 }
 </script>
